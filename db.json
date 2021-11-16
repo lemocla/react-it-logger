@@ -27,6 +27,20 @@
       "attention": false,
       "tech": "Sara Wilson",
       "date": "2019-05-31T19:57:35.544Z"
+    },
+    {
+      "message": "Test 001 - log test",
+      "attention": false,
+      "tech": "Sam Smith",
+      "date": "2021-11-16T15:40:24.518Z",
+      "id": 5
+    },
+    {
+      "message": "1122 - Wireless down",
+      "attention": true,
+      "tech": "Sara Wilson",
+      "date": "2021-11-16T15:42:58.261Z",
+      "id": 6
     }
   ],
   "techs": [
@@ -48,7 +62,7 @@
     {
       "id": 4,
       "firstName": "Mary",
-      "lastName": "Joe"      
+      "lastName": "Joe"
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { GET_LOGS, SET_LOADING, LOGS_ERROR} from './types'
+import { GET_LOGS, SET_LOADING, LOGS_ERROR, ADD_LOG} from './types'
 
 /* initial
 export const getLogs = () => {
@@ -34,6 +34,28 @@ export const getLogs = () => async dispatch => {
         }
     }
 
+    // ADD logs from server - refactored
+    export const addLog = (log) => async dispatch => {
+    // Redux thunk --> aync mehod // will return a function
+        try {
+            setLoading();
+            const res = await fetch('/logs', {
+                method:'POST',
+                body: JSON.stringify(log),
+                headers: {'Content-Type': 'application/json'}
+            });
+            const data = await res.json();
+            dispatch({
+                type: ADD_LOG,
+                payload: data
+            })            
+        } catch (err) {
+            dispatch({
+                type: LOGS_ERROR,
+                payload: err.response.data
+            })
+        }
+    }
 
 // set loading to true
 export const setLoading = () =>{
