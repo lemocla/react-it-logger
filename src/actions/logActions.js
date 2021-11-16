@@ -15,7 +15,7 @@ export const getLogs = () => {
 }*/
 
 
-// get logs - refactored
+// get logs from server - refactored
 export const getLogs = () => async dispatch => {
     // Redux thunk --> aync mehod // will return a function
         try {
@@ -29,12 +29,12 @@ export const getLogs = () => async dispatch => {
         } catch (err) {
             dispatch({
                 type: LOGS_ERROR,
-                payload: error.response.data
+                payload: err.response.data
             })
         }
     }
 
-    
+
 // set loading to true
 export const setLoading = () =>{
     return {
