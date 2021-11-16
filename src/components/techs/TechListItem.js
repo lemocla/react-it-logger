@@ -14,7 +14,7 @@ const TechListItem = ({ tech }) => {
      }
      
      TechListItem.propTypes = {
-     log: PropTypes.object.isRequired,
+     tech: PropTypes.object.isRequired,
      }
 
 export default TechListItem
