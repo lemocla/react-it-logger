@@ -1,15 +1,11 @@
-import { keyDown } from 'materialize-css';
-import React, {useState, useEffect } from 'react';
-
+import React, {useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import TechListItem from './TechListItem';
 import { getTechs } from '../../actions/techActions';
 
 
-
 const TechListModal = ({getTechs, tech: {techs, loading}}) => {
-    // set state to empty array
 
     // fetch API to get Json data
     useEffect(() => {
@@ -26,17 +22,16 @@ const TechListModal = ({getTechs, tech: {techs, loading}}) => {
                 </ul>
             </div>
         </div>
-
     )
-}
+};
 
 TechListModal.propTypes = {
     tech: PropTypes.object.isRequired,
     getTechs: PropTypes.func.isRequired,
-}
+};
 
 const mapStateToProps = state => ({
     tech: state.tech
   });
 
-export default connect(mapStateToProps, {getTechs})(TechListModal)
+export default connect(mapStateToProps, {getTechs})(TechListModal);

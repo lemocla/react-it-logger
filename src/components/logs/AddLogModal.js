@@ -13,7 +13,7 @@ const AddLogModal = ( {addLog} ) => {
 
     const onSubmit = () =>{
         if( message === '' || tech === ''){
-            M.toast({html: 'Please enter a message and tech'})
+            M.toast({html: 'Please enter a message and tech'});
         } else {
             const newLog = {
                 message,
@@ -24,7 +24,8 @@ const AddLogModal = ( {addLog} ) => {
 
             // action add new log
             addLog(newLog);
-            M.toast({ html: `Log added by ${tech}`})
+            M.toast({ html: `Log added by ${tech}`});
+
             // clear fieds
             setMessage('');
             setTech('');
@@ -66,14 +67,15 @@ const AddLogModal = ( {addLog} ) => {
             </div>
         </div>
     )
-}
+};
 
 AddLogModal.propTypes = {
     addLog: PropTypes.func.isRequired
-}
+};
 
 const modalStyle = {
     width: '75%',
     height: '75%'
-}
-export default connect(null, {addLog})(AddLogModal)
+};
+
+export default connect(null, {addLog})(AddLogModal);

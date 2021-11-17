@@ -7,7 +7,7 @@ const SearchBar = ({searchLogs}) => {
     const text = useRef('')
 
     const onChange = e => {
-      searchLogs(text.current.value)
+      searchLogs(text.current.value);
     }
     
     return (
@@ -29,4 +29,4 @@ SearchBar.propTypes = {
   searchLogs: PropTypes.func.isRequired
 };
 
-export default connect(null, {searchLogs})(SearchBar)
+export default connect(null, {searchLogs})(SearchBar);

@@ -6,6 +6,7 @@ import TechSelectOptions from '../techs/TechSelectOptions';
 import M from 'materialize-css/dist/js/materialize.min.js';
 
 const EditLogModal = ({current, updateLog}) => {
+    
     const [ message, setMessage ] = useState('');
     const [attention, setAttention] = useState(false);
     const [tech, setTech] = useState('');

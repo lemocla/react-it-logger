@@ -7,7 +7,6 @@ import { getLogs } from '../../actions/logActions';
 
 const Logs = ({log: {logs, loading }, getLogs}) => {
 
-
     useEffect(()=>{
         getLogs();
         // eslint-disable-next-line
@@ -16,7 +15,7 @@ const Logs = ({log: {logs, loading }, getLogs}) => {
     // If loading -> return loading ...
     if (loading || logs === null ){
        return <Preloader/>
-    }
+    };
 
     return (
         <ul className="collection with-header">
@@ -27,15 +26,15 @@ const Logs = ({log: {logs, loading }, getLogs}) => {
             : (logs.map(log => <LogItem log={log} key={log.id} />))}
         </ul>
     )
-}
+};
 
 Logs.propTypes = {
     log: PropTypes.object.isRequired,
     getLogs: PropTypes.func.isRequired,
-}
+};
 
 const mapStateToProps = state =>({
- log: state.log//this is the prop from the root reducer
-})
+    log: state.log//this is the prop from the root reducer
+});
 
 export default connect(mapStateToProps, {getLogs})(Logs); //connect --> react-redux
